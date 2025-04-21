@@ -2,12 +2,19 @@
 ## Aim:
   To develop a smart contract for issuing and verifying academic certificates on Ethereum, preventing forgery and ensuring authenticity.
 ## Algorithm:
-1. Deploy a smart contract where universities can issue certificates.
-2. Store a hash of certificate data on-chain.
-3. Provide a verification function that checks certificate authenticity.
-4. Users can verify the certificate by comparing the stored hash.
+### STEP 1:
+Deploy a smart contract where universities can issue certificates.
+### STEP 2:
+Store a hash of certificate data on-chain.
+### STEP 3:
+Provide a verification function that checks certificate authenticity.
+### STEP 4:
+Users can verify the certificate by comparing the stored hash.
 ## Program:
 ```
+DATE : 16.04.2025
+REG NO : 212223240141
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
