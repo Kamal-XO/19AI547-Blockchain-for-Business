@@ -1,32 +1,39 @@
 # Experiment 4: DeFi Lending and Borrowing Protocol
-# Aim:
+## DATE : 21.04.2025
+## Aim:
 To build a decentralized lending protocol where users can deposit assets to earn interest and borrow assets by providing collateral. This experiment introduces concepts like overcollateralization, liquidity pools, and interest accrual in DeFi.
 
-# Algorithm:
-Step 1: Setup Lending and Borrowing Mechanism
-Users deposit ETH into the contract as liquidity.
+## Algorithm:
+### step 1:
+Deploy contract and set the owner, interest rate, and liquidation threshold.
 
+### step 2:
+User deposits funds by calling deposit() and sending Ether to the contract.
 
-Depositors receive interest based on their deposits.
+### step 3:
+Check collateral and ensure it meets the required threshold for borrowing.
 
+### step 4:
+User borrows funds by calling borrow(amount), transferring borrowed funds to the user.
 
-Borrowers can borrow ETH but must provide collateral (e.g., 150% of the borrowed amount).
+### step 5:
+Record deposits in the deposits mapping and borrowed amounts in the borrowed mapping.
 
+### step 6:
+Accumulate interest (future step, not implemented in current contract).
 
-Interest on borrowed funds is calculated dynamically based on utilization rate.
+### step 7:
+Check liquidation if the user’s collateral is below 150% of the borrowed amount.
 
+### step 8:
+Liquidate borrower by calling liquidate() and transferring seized collateral to the caller.
 
-Step 2: Implement Overcollateralization
-If a borrower’s collateral value drops below a certain liquidation threshold, their collateral is liquidated to repay the debt.
-
-
-Step 3: Allow Liquidation
-If collateral < liquidation threshold, liquidators can repay the borrower's debt and claim their collateral at a discount.
-
-
-
-Program:
+## Program:
 ```
+
+NAME : RIYA P L
+REG NO : 212223240141
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -73,16 +80,16 @@ contract DeFiLending {
 }
 
 ```
-# Expected Output:
-Users can deposit ETH and earn interest.
+# Output:
+![Screenshot 2025-04-21 135107](https://github.com/user-attachments/assets/e4097c87-ec55-4d3d-a9ad-022b0e816c32)
 
+![Screenshot 2025-04-21 135120](https://github.com/user-attachments/assets/7715282a-97ab-4770-aa0d-105b694d0afd)
 
-Users can borrow ETH by providing collateral.
+![Screenshot 2025-04-21 135143](https://github.com/user-attachments/assets/603b8cb3-8a51-410d-b868-d3c57f669c44)
 
+![Screenshot 2025-04-21 135438](https://github.com/user-attachments/assets/72c8bb3f-393f-4596-9fa8-d6096f792f1a)
 
-If collateral < 150% of borrowed amount, liquidators can seize the collateral.
-
-
+![Screenshot 2025-04-21 135519](https://github.com/user-attachments/assets/b48588ce-5294-47d1-b148-41c4aa0b8f1d)
 
 # High-Level Overview:
 Teaches key DeFi concepts: lending, borrowing, collateral, liquidation.
@@ -94,4 +101,4 @@ Introduces risk management: overcollateralization and liquidation.
 Directly related to DeFi protocols like Aave and Compound.
 
 # RESULT : 
-
+Thus the DeFi Lending and Borrowing Protocol is successfully implemented.
