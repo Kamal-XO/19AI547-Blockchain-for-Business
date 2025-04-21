@@ -1,22 +1,26 @@
 # Experiment 2: Blockchain-Based Crowdfunding (Kickstarter Alternative)
+## DATE : 16.04.2025
 ## Aim:
 To create a decentralized crowdfunding platform where donors contribute funds only if the campaign goal is met.
 
 ## Algorithm:
+### STEP 1: 
 A project owner starts a campaign with a funding goal and deadline.
 
-
+### STEP 2:
 Contributors can send ETH to the campaign.
 
-
+### STEP 3:
 If the goal is met before the deadline, funds are released to the project owner.
 
-
+### STEP 4:
 If the goal is not met, contributors can withdraw their funds.
-
 
 ## Program:
 ```
+REG NO : 212223240141
+NAME : RIYA P L
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
