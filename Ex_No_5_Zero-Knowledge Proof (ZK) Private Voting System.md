@@ -1,27 +1,39 @@
 # Experiment 5: Zero-Knowledge Proof (ZK) Private Voting System
+# DATE : 23.04.2025
 # Aim:
 To implement a fully private and transparent voting system using Zero-Knowledge Proofs (ZKPs). This ensures that votes are counted fairly without revealing who voted for whom.
 
 # Algorithm:
-Step 1: Voter Registration
-Each voter generates a secret vote key and submits a commitment (hashed vote) to the contract.
+### step 1:
+Voter chooses a candidate (1 or 2) and a secret string.
 
+### step 2:
+Voter computes commitment = keccak256(secret + choice).
 
-Step 2: Voting Process
-Voters submit their votes privately using a hash, without revealing their choice.
+### step 3:
+Voter calls registerVoter(commitment) to register and store the commitment.
 
+### step 4:
+Contract saves the voter's address and their commitment.
 
-Step 3: ZK Verification
-The contract verifies if a vote belongs to a registered voter but does not reveal the actual vote.
+### step 5:
+After voting phase, voter reveals their secret and choice.
 
+### step 6:
+Voter calls revealVote(secret, choice) on the contract.
 
-Step 4: Vote Counting
-Once voting ends, the contract reveals the final tally without linking votes to individuals.
+### step 7:
+Contract checks if keccak256(secret + choice) matches the stored commitment.
 
+### step 8:
+If valid, vote is counted for the chosen candidate.
 
 
 # Program:
 ```
+NAME : RIYA P L
+REG NO : 212223240141
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -56,16 +68,18 @@ contract ZKVoting {
 }
 
 ```
-# Expected Output:
-Voters commit their votes privately.
 
+```
+web3.utils.soliditySha3({type: "string", value: "your name"}, {type: "uint256", value: "1 or 2"})
+```
+# Output:
+![5 1](https://github.com/user-attachments/assets/a24c4a52-4e87-4b49-9e09-bc4b20b0f720)
 
-When revealed, the contract verifies correctness but keeps votes anonymous.
+![5 2](https://github.com/user-attachments/assets/d2bd4c0f-4228-47e7-8454-5eda26cb4434)
 
+![5 3](https://github.com/user-attachments/assets/695d94a7-6985-4e48-8159-8cdf036d6432)
 
-Final result is publicly verifiable without exposing individual votes.
-
-
+![5 4](https://github.com/user-attachments/assets/d2237fcd-704a-4d62-8442-7ef061191e2d)
 
 # High-Level Overview:
 Uses ZKPs to ensure anonymous and fair elections.
@@ -77,3 +91,4 @@ Prevents vote tampering while maintaining voter privacy.
 Mimics real-world ZK voting applications in governance and DAOs.
 
 # RESULT: 
+Thus the Zero-Knowledge Proof (ZK) Private Voting System is successfully implemented.
