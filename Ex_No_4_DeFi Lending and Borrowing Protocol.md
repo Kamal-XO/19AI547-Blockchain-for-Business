@@ -34,7 +34,7 @@ Liquidate borrower by calling liquidate() and transferring seized collateral to 
 NAME : RIYA P L
 REG NO : 212223240141
 
-// SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 contract DeFiLending {
@@ -60,11 +60,16 @@ contract DeFiLending {
     }
 
     function borrow(uint256 amount) public payable {
-        require(msg.value >= (amount * liquidationThreshold) / 100, "Not enough collateral");
+        require(msg.value >= (amount * liquidationThreshold) / 100, "Nota enough collateral");
         borrowed[msg.sender] += amount;
         collateral[msg.sender] += msg.value;
         payable(msg.sender).transfer(amount);
         emit Borrowed(msg.sender, amount, msg.value);
+    }
+    function reduceCollateral(address user, uint256 amount) public {
+    require(msg.sender == owner, "Only owner can reduce");
+    require(collateral[user] >= amount, "Not enough collateral to reduce");
+    collateral[user] -= amount;
     }
 
     function liquidate(address borrower) public {
@@ -81,15 +86,17 @@ contract DeFiLending {
 
 ```
 # Output:
-![Screenshot 2025-04-21 135107](https://github.com/user-attachments/assets/e4097c87-ec55-4d3d-a9ad-022b0e816c32)
+![Screenshot 2025-04-28 131034](https://github.com/user-attachments/assets/2d9a5fb3-1d84-4285-8484-caa8d1248c07)
 
-![Screenshot 2025-04-21 135120](https://github.com/user-attachments/assets/7715282a-97ab-4770-aa0d-105b694d0afd)
+![Screenshot 2025-04-28 133609](https://github.com/user-attachments/assets/9ddab251-e2b6-47f3-8948-22b56978a814)
 
-![Screenshot 2025-04-21 135143](https://github.com/user-attachments/assets/603b8cb3-8a51-410d-b868-d3c57f669c44)
+![Screenshot 2025-04-28 133943](https://github.com/user-attachments/assets/6294788f-e4b7-4d18-8154-bf6aa80aa874)
 
-![Screenshot 2025-04-21 135438](https://github.com/user-attachments/assets/72c8bb3f-393f-4596-9fa8-d6096f792f1a)
+![Screenshot 2025-04-28 134019](https://github.com/user-attachments/assets/801bab03-cbde-46de-bb95-d1eff9a44cbc)
 
-![Screenshot 2025-04-21 135519](https://github.com/user-attachments/assets/b48588ce-5294-47d1-b148-41c4aa0b8f1d)
+![Screenshot 2025-04-28 134030](https://github.com/user-attachments/assets/856a64e9-077a-4ef8-a75f-383d84defc18)
+
+![Screenshot 2025-04-28 134129](https://github.com/user-attachments/assets/e7b99147-77e2-4cfd-9637-d1ab5c3b0384)
 
 # High-Level Overview:
 Teaches key DeFi concepts: lending, borrowing, collateral, liquidation.
