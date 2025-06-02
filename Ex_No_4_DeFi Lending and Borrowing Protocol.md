@@ -31,8 +31,8 @@ Liquidate borrower by calling liquidate() and transferring seized collateral to 
 ## Program:
 ```
 
-NAME : RIYA P L
-REG NO : 212223240141
+NAME : KAMALESH SV
+REG NO : 212222240041
 
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
