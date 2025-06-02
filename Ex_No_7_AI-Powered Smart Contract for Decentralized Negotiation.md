@@ -29,8 +29,8 @@ Each successful sale updates pricing data, allowing smarter future counteroffers
 Contract enables real-time, decentralized negotiation, imitating human bargaining through simple on-chain AI logic.
 # Program:
 ```
-NAME : RIYA P L
-REG NO : 212223240141
+NAME : KAMALESH SV
+REG NO : 212222240041
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
