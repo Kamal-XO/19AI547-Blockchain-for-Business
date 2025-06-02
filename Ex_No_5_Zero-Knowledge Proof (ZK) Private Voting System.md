@@ -31,8 +31,8 @@ If valid, vote is counted for the chosen candidate.
 
 # Program:
 ```
-NAME : RIYA P L
-REG NO : 212223240141
+NAME : KAMALESH SV
+REG NO : 212222240041
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
