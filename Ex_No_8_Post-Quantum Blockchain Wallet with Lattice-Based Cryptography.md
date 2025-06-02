@@ -31,9 +31,8 @@ If the hashes match and users are registered with enough balance, transfer the f
 
 # Program:
 
-Name : RIYA P L
-
-Reg no : 212223240141
+NAME : KAMALESH SV
+REG NO : 212222240041
 
 (Solidity does not natively support lattice cryptography yet, but we simulate it using custom hash-based authentication.)
 ```
